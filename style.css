@@ -536,3 +536,85 @@ nav {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── EPISODE PAGE ── */
+
+.episode-page {
+  padding: 80px 0 120px;
+  max-width: 720px;
+}
+
+.episode-page-title {
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 24px 0 8px;
+}
+
+.episode-page-date {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.episode-embed {
+  margin-bottom: 24px;
+}
+
+.episode-desc {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--light-gray);
+}
+
+.episode-desc p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.episode-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding-top: 32px;
+  border-top: 1px solid var(--light-gray);
+  gap: 24px;
+}
+
+.episode-nav-link {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  transition: color 0.2s;
+  max-width: 45%;
+}
+
+.episode-nav-link:hover {
+  color: var(--black);
+}
+
+.episode-nav-next {
+  text-align: right;
+  margin-left: auto;
+}
+
+/* Episode list links */
+.episode-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: baseline;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--light-gray);
+  transition: color 0.2s;
+}
+
+.episode-item-link:hover .episode-title {
+  color: var(--gray);
+}

@@ -24,3 +24,43 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/podcast/7-slam-dance-winner-ryan-piotrowicz-on-should-you-go-to-film-school-getting-first-feature-made-and-winning-slam-dance-epw57"
+  to = "/podcast/7-slam-dance-winner-ryan-piotrowicz-on-should-you-go-to-film-school-getting-first-feature-made-and-winning-slam-dance-epw57/"
+  status = 301
+
+[[redirects]]
+  from = "/podcast/7-slam-dance-winner-ryan-piotrowicz-on-should-you-go-to-film-school-getting-first-feature-made-and-winning-slam-dance"
+  to = "/podcast/7-slam-dance-winner-ryan-piotrowicz-on-should-you-go-to-film-school-getting-first-feature-made-and-winning-slam-dance/"
+  status = 301
+
+[[redirects]]
+  from = "/podcast/tony-bergman-5-best-bad-movies-of-all-time-kanes-list-rdk6c"
+  to = "/podcast/tony-bergman-5-best-bad-movies-of-all-time-kanes-list-rdk6c/"
+  status = 301
+
+[[redirects]]
+  from = "/podcast/tony-bergman-5-best-bad-movies-of-all-time-kanes-list"
+  to = "/podcast/tony-bergman-5-best-bad-movies-of-all-time-kanes-list/"
+  status = 301
+
+[[redirects]]
+  from = "/podcast/ep-4-best-free-movies-on-youtube-alexs-list"
+  to = "/podcast/ep-4-best-free-movies-on-youtube-alexs-list/"
+  status = 301
+
+[[redirects]]
+  from = "/podcast/ep-3-best-free-movies-on-youtube-kanes-list"
+  to = "/podcast/ep-3-best-free-movies-on-youtube-kanes-list/"
+  status = 301
+
+[[redirects]]
+  from = "/podcast/ep-2-what-should-the-podcast-be-about"
+  to = "/podcast/ep-2-what-should-the-podcast-be-about/"
+  status = 301
+
+[[redirects]]
+  from = "/podcast/tony-bergman-1-liam-whalen-of-big-lw-podcast-network"
+  to = "/podcast/tony-bergman-1-liam-whalen-of-big-lw-podcast-network/"
+  status = 301
