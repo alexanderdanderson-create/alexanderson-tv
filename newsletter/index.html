@@ -2,12 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://newsletter.alexanderson.tv">
-  <link rel="canonical" href="https://newsletter.alexanderson.tv">
-  <title>Newsletter — Alex Anderson</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mailing List — Alex Anderson</title>
+  <meta name="description" content="Sign up for updates from Alex Anderson.">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <script>window.location.href = "https://newsletter.alexanderson.tv";</script>
-  <p>Redirecting to <a href="https://newsletter.alexanderson.tv">newsletter.alexanderson.tv</a>…</p>
+
+  <nav>
+    <a href="/" class="nav-name">Alex Anderson</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button><ul class="nav-links">
+      <li class="dropdown">
+        <a href="#">Feature Films</a>
+        <ul class="dropdown-menu">
+          <li><a href="/timing-movie/">Timing</a></li>
+          <li><a href="/fog/">FOG</a></li>
+        </ul>
+      </li>
+      <li><a href="/podcast/">Podcast</a></li>
+      <li><a href="/newsletter/">Mailing List</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </nav>
+
+  <main class="page newsletter-page">
+    <section class="newsletter-panel" aria-labelledby="mailing-list-title">
+      <h1 id="mailing-list-title">Mailing List</h1>
+      <p>Currently writing my next film, You Ain't Alone. Sign up to get updates.</p>
+      <iframe
+        class="newsletter-embed"
+        src="https://newsletter.alexanderson.tv/embed"
+        title="Subscribe to Alex Anderson's mailing list"
+        loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
 </body>
 </html>
