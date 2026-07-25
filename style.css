@@ -276,12 +276,17 @@ nav {
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px 80px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 48px;
+}
+
+.review-item {
+  padding: 28px 0 32px;
+  border-top: 1px solid var(--light-gray);
 }
 
 .review-item blockquote {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   font-style: italic;
   color: #222;
@@ -541,8 +546,8 @@ nav {
   }
 
   .reviews-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 32px;
   }
 
   .photo-grid {
@@ -567,6 +572,10 @@ nav {
   }
 
   .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid {
     grid-template-columns: 1fr;
   }
 }
