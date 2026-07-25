@@ -329,6 +329,78 @@ nav {
   object-fit: cover;
 }
 
+.gallery-lightbox-trigger {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.gallery-lightbox-trigger:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: -4px;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px 32px;
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.gallery-lightbox[hidden] {
+  display: none;
+}
+
+.gallery-lightbox-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: min(1200px, 100%);
+  max-height: 100%;
+}
+
+.gallery-lightbox-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: calc(100vh - 130px);
+  object-fit: contain;
+}
+
+.gallery-lightbox-caption {
+  margin-top: 14px;
+  color: var(--white);
+  font-size: 13px;
+  text-align: center;
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  padding: 8px;
+  border: 0;
+  background: none;
+  color: var(--white);
+  font: inherit;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-lightbox-close:focus-visible {
+  outline: 2px solid var(--white);
+  outline-offset: 2px;
+}
+
 .photo-placeholder {
   width: 100%;
   height: 100%;
