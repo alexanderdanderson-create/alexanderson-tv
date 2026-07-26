@@ -221,6 +221,30 @@ nav {
   color: #444;
 }
 
+.film-details {
+  margin-top: 24px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.film-details div {
+  display: flex;
+  gap: 16px;
+}
+
+.film-details dt {
+  flex: 0 0 80px;
+  color: var(--gray);
+}
+
+.film-details dd {
+  margin: 0;
+}
+
+.film-details a {
+  border-bottom: 1px solid var(--light-gray);
+}
+
 /* ── VIDEO EMBED ── */
 
 .video-section {
