@@ -245,6 +245,41 @@ nav {
   border-bottom: 1px solid var(--light-gray);
 }
 
+.film-header-with-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.film-copy {
+  min-width: 0;
+}
+
+.film-credits {
+  max-width: 760px;
+}
+
+.film-credits div {
+  margin-bottom: 8px;
+}
+
+.film-credits dd {
+  max-width: 620px;
+}
+
+.film-header-image {
+  aspect-ratio: 4 / 3;
+  background: #f2f2f2;
+  overflow: hidden;
+}
+
+.film-header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ── VIDEO EMBED ── */
 
 .video-section {
@@ -655,6 +690,18 @@ nav {
 
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .film-header-with-image {
+    grid-template-columns: 1fr;
+  }
+
+  .film-header-image {
+    max-width: 520px;
+  }
+
+  .film-details div {
+    align-items: flex-start;
   }
 
   .site-footer {
