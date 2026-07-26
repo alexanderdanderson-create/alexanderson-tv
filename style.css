@@ -221,27 +221,62 @@ nav {
   color: #444;
 }
 
-.film-details {
-  margin-top: 24px;
+.film-credits-panel {
+  margin-top: 32px;
+  max-width: 760px;
+  display: grid;
+  gap: 28px;
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
-.film-details div {
-  display: flex;
-  gap: 16px;
-}
-
-.film-details dt {
-  flex: 0 0 80px;
+.credit-label {
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--gray);
 }
 
-.film-details dd {
-  margin: 0;
+.credit-list {
+  display: grid;
+  gap: 8px;
 }
 
-.film-details a {
+.credit-list-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 36px;
+}
+
+.credit-list li {
+  display: grid;
+  grid-template-columns: minmax(140px, 1fr) minmax(90px, auto);
+  gap: 18px;
+  padding: 8px 0;
+  border-top: 1px solid var(--light-gray);
+}
+
+.credit-list span {
+  color: var(--black);
+}
+
+.credit-list em {
+  color: var(--gray);
+  font-style: normal;
+  text-align: right;
+}
+
+.film-credit-meta {
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--light-gray);
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.film-credit-meta a {
+  color: var(--black);
   border-bottom: 1px solid var(--light-gray);
 }
 
@@ -700,8 +735,8 @@ nav {
     max-width: 520px;
   }
 
-  .film-details div {
-    align-items: flex-start;
+  .credit-list-columns {
+    grid-template-columns: 1fr;
   }
 
   .site-footer {
