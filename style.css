@@ -213,6 +213,14 @@ nav {
   text-transform: uppercase;
 }
 
+.film-tagline {
+  margin-top: 18px;
+  max-width: 620px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--black);
+}
+
 .film-synopsis {
   margin-top: 24px;
   max-width: 560px;
@@ -301,6 +309,14 @@ nav {
 
 .film-credits dd {
   max-width: 620px;
+}
+
+.fog-hero {
+  align-items: flex-start;
+}
+
+.fog-hero .film-header-image {
+  margin-top: 150px;
 }
 
 .film-header-image {
@@ -733,6 +749,10 @@ nav {
 
   .film-header-image {
     max-width: 520px;
+  }
+
+  .fog-hero .film-header-image {
+    margin-top: 0;
   }
 
   .credit-list-columns {
