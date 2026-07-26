@@ -282,7 +282,7 @@ nav {
 
 .film-header-with-image {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 520px);
   gap: clamp(32px, 6vw, 80px);
   align-items: center;
 }
