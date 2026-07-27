@@ -428,6 +428,59 @@ nav {
   color: var(--gray);
 }
 
+.archive-link {
+  display: inline-block;
+  margin-top: 24px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 3px;
+}
+
+.archive-link:hover {
+  color: var(--gray);
+  border-color: var(--gray);
+}
+
+.review-archive-page .archive-header {
+  padding: 92px 0 64px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.archive-reviews-section {
+  padding: 60px 0;
+}
+
+.archive-reviews-grid {
+  columns: 3 280px;
+  column-gap: 48px;
+}
+
+.archive-review-item {
+  break-inside: avoid;
+  padding: 24px 0 28px;
+  border-top: 1px solid var(--light-gray);
+}
+
+.archive-review-item blockquote {
+  font-size: 15px;
+  line-height: 1.75;
+  font-style: italic;
+  color: #222;
+}
+
+.archive-review-item cite {
+  display: block;
+  margin-top: 14px;
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
 /* ── PHOTO GALLERIES ── */
 
 .gallery-section {
