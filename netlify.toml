@@ -1,14 +1,4 @@
 [[redirects]]
-  from = "/fog"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/fog/"
-  to = "/"
-  status = 301
-
-[[redirects]]
   from = "/timing-movie"
   to = "/timing-movie/"
   status = 301

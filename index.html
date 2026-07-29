@@ -3,197 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FOG — Alex Anderson</title>
-  <meta name="description" content="FOG: an intimate psychological portrait of a daughter's high-stakes battle for independence — a feature film by Alex Anderson.">
+  <title>Alex Anderson — Filmmaker, Actor</title>
+  <meta name="description" content="Alex Anderson is a filmmaker and actor based in New York City. Writer-director of Timing and FOG, with films, acting clips, and mailing list updates.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <nav>
-    <a href="/" class="nav-name">Alex Anderson</a>
+    <a href="/" class="nav-name" aria-current="page">Alex Anderson</a>
     <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button><ul class="nav-links">
       <li class="dropdown">
         <a href="#">Feature Films</a>
         <ul class="dropdown-menu">
           <li><a href="/timing-movie/">Timing</a></li>
-          <li><a href="/" aria-current="page">FOG</a></li>
+          <li><a href="/fog/">FOG</a></li>
         </ul>
       </li>
-      <li><a href="/podcast/">Podcast</a></li>
       <li><a href="/newsletter/">Mailing List</a></li>
       <li><a href="/about/">About</a></li>
     </ul>
   </nav>
 
-  <main class="page">
-    <div class="container">
-
-      <header class="film-header film-header-with-image fog-hero">
-        <div class="film-copy">
-          <h1 class="film-title">FOG</h1>
-          <p class="film-meta">Feature Film &nbsp;·&nbsp; Psychological Drama</p>
-          <p class="film-tagline">An intimate psychological portrait of a daughter's high-stakes battle for independence.</p>
-          <p class="film-synopsis">
-            A young writer returns to her childhood home carrying a final family obligation, a deadline, and years of unresolved tension. FOG follows Jane through a visit where every small exchange threatens to pull her back into the fear, obligation, and guilt she is trying to escape.
-          </p>
-          <div class="film-credits-panel">
-            <div class="credit-group">
-              <p class="credit-label">Cast</p>
-              <ul class="credit-list">
-                <li><span>Amanda Van Nostrand</span><em>Jane</em></li>
-                <li><span>Ellen Adair</span><em>Annette</em></li>
-                <li><span>Kathleen McNenny</span><em>Rose</em></li>
-                <li><span>Brian McCarthy</span><em>Ray</em></li>
-                <li><span>Alex Anderson</span><em>Adam</em></li>
-                <li><span>Ryan Barry</span><em>Seth</em></li>
-                <li><span>Sophia Rumbea</span><em>Melissa</em></li>
-                <li><span>Christopher Hawthorn</span><em>Sean</em></li>
-                <li><span>Shah Motia</span><em>Customer</em></li>
-              </ul>
-            </div>
-            <div class="credit-group">
-              <p class="credit-label">Crew</p>
-              <ul class="credit-list">
-                <li><span>Alex Anderson</span><em>Writer, Director, Producer</em></li>
-                <li><span>Darin Quan</span><em>Cinematography</em></li>
-              </ul>
-            </div>
-            <p class="film-credit-meta">Feature Film &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; 71 minutes &nbsp;·&nbsp; <a href="https://www.imdb.com/title/tt15003962/">IMDb</a></p>
+  <main class="page home-page">
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <p class="section-label">Alex Anderson</p>
+        <h1>Filmmaker<br>Actor</h1>
+        <p class="home-hero-intro">Writer-director of <em>Timing</em> and <em>FOG</em>, actor, based in New York City.</p>
+        <form class="home-signup" id="home-signup" aria-label="Subscribe to Alex Anderson's mailing list">
+          <label for="home-email">Get updates on new films, screenings, and clips.</label>
+          <div class="home-signup-row">
+            <input id="home-email" type="email" name="email" placeholder="Your email address" required autocomplete="email">
+            <button type="submit">Subscribe</button>
           </div>
+          <p class="home-signup-msg" id="home-signup-msg">No spam. Unsubscribe anytime.</p>
+        </form>
+      </div>
+      <figure class="home-hero-image">
+        <img src="assets/portraits/alex-anderson-filmmaker-on-set-bts.jpg" alt="Alex Anderson on set with a camera operator, filmmaker and actor">
+      </figure>
+    </section>
+
+    <section class="home-work home-work-three" aria-labelledby="featured-work-title">
+      <div class="container">
+        <p class="section-label">Featured Work</p>
+        <h2 id="featured-work-title">Films and acting clips from Alex Anderson.</h2>
+        <div class="home-work-grid">
+          <a class="home-work-card" href="/timing-movie/">
+            <img class="home-work-thumb" src="assets/posters/timing-feature-film-poster-alex-anderson.jpg" alt="Timing feature film poster by Alex Anderson">
+            <span>Feature Film</span>
+            <strong>Timing</strong>
+            <p>An independent drama-comedy about ambition, failure, and creative life in New York.</p>
+          </a>
+          <a class="home-work-card" href="/fog/">
+            <img class="home-work-thumb" src="assets/posters/fog-feature-film-poster-alex-anderson.jpg" alt="FOG feature film poster by Alex Anderson">
+            <span>Feature Film</span>
+            <strong>FOG</strong>
+            <p>An intimate psychological drama about family obligation, fear, obligation, and guilt.</p>
+          </a>
+          <a class="home-work-card" href="/acting-clips/">
+            <img class="home-work-thumb" src="assets/fog-stills/alex-anderson-as-adam-amanda-van-nostrand-as-jane-fog-feature-film-still-coffee-shop.jpg" alt="Alex Anderson as Adam in FOG feature film acting clip">
+            <span>Performance Reel</span>
+            <strong>Acting Clips</strong>
+            <p>Selected scenes featuring Alex Anderson as Adam in <em>FOG</em>.</p>
+          </a>
         </div>
-        <figure class="film-header-image">
-          <img src="assets/fog-stills/amanda-van-nostrand-as-jane-fog-feature-film-still-breakdown.jpg" alt="Amanda Van Nostrand as Jane in a still from the feature film FOG">
-        </figure>
-      </header>
-
-      <section class="video-section">
-        <p class="section-label">Film</p>
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/DacCvo7ngLA"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <a href="https://www.youtube.com/watch?v=aAknjJiYZJA" class="watch-link" target="_blank" rel="noopener">Watch Full Film (71 mins)</a>
-      </section>
-
-      <section class="gallery-section">
-        <p class="section-label">Stills</p>
-        <div class="photo-grid">
-          <div class="photo-grid-item"><img src="assets/fog-stills/amanda-van-nostrand-as-jane-fog-feature-film-still-bench-flowers.jpg" alt="Amanda Van Nostrand as Jane in a still from the feature film FOG"></div>
-          <div class="photo-grid-item"><img src="assets/fog-stills/kathleen-mcnenny-as-rose-amanda-van-nostrand-as-jane-fog-feature-film-still-red-coat-mirror.jpg" alt="Kathleen McNenny as Rose and Amanda Van Nostrand as Jane in a still from the feature film FOG"></div>
-          <div class="photo-grid-item"><img src="assets/fog-stills/kathleen-mcnenny-as-rose-amanda-van-nostrand-as-jane-fog-feature-film-still-table-conversation.jpg" alt="Kathleen McNenny as Rose and Amanda Van Nostrand as Jane in a still from the feature film FOG"></div>
-          <div class="photo-grid-item"><img src="assets/fog-stills/amanda-van-nostrand-as-jane-fog-feature-film-still-letter-typewriter.jpg" alt="Amanda Van Nostrand as Jane in a still from the feature film FOG"></div>
-          <div class="photo-grid-item"><img src="assets/fog-stills/amanda-van-nostrand-as-jane-fog-feature-film-still-mirror.jpg" alt="Amanda Van Nostrand as Jane in a still from the feature film FOG"></div>
-          <div class="photo-grid-item"><img src="assets/fog-stills/ryan-barry-as-seth-kathleen-mcnenny-as-rose-fog-feature-film-still-ashes-umbrella.jpg" alt="Ryan Barry as Seth and Kathleen McNenny as Rose in a still from the feature film FOG"></div>
-        </div>
-      </section>
-
-      <section class="reviews-section">
-        <p class="section-label">Audience Reviews</p>
-        <div class="reviews-grid">
-          <div class="review-item">
-            <blockquote>“This is the best film I’ve ever seen on what it’s really like being an adult child of parents who abused us. Thank you for what feels like ‘being seen.’”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“This captures maternal narcissism so perfectly. Brilliant work, script and cast!”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“You crystalized the dynamic. Flawless acting in that living room. It’s really, really good.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“You portrayed how hard it was to go back to that childhood house. So many undercurrents. I don’t feel alone after watching it.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“Such a genuine thing to put down on film. Excellent writing. Kudos to all involved.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“This is such a genuine movie. It speaks to the human experience. Well done—great script.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“A mixed soup of opposing emotions. Well done. Fabulous music choices, too!”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“The writing of the mom character is on point.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“Superb film—one of the most real, heartfelt portrayals of the struggles with narcissistic parents.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“The lady who played your mom nails it. The theatrics and hysterics are just way too real.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“Brilliant film. I really like the acting, direction and cinematography. You foreshadow the main points very well!”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“This one makes you laugh and cry and leaves you thinking about it for days. Worth a watch—and maybe more.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“10/10—raw and real.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“The fog lifts when you can see your own experience from the outside in a movie like this.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“Watching this again to match the season. It’s my 26th time. Just love it.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“Thank you for making this film. My god, was it honest. This felt so true to the experience.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“A really good movie! I hope many people have the opportunity to enjoy it.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“I’m so glad I stumbled across this film. I can’t wait to share it with my friends who are mental health counselors.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“I really appreciated how you built up to it so the audience might doubt the sister’s decision—then knocked that doubt down in one fell swoop.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“Brilliant film. Very validating, and a topic one doesn’t often come across. Thank you!”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“The pain and guilt of going no contact. Bravo on the writing and acting.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“Painfully raw, and so well done. Kudos to the writers and everyone involved.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“This movie is phenomenal. So realistic.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-          <div class="review-item">
-            <blockquote>“You must watch from beginning to end to see how controlled narcissistic behavior is before the mask comes off—and goes back on again.”</blockquote>
-            <cite>— Audience Member</cite>
-          </div>
-        </div>
-        <a href="/fog/audience-reviews/" class="archive-link">Read the full FOG audience response archive</a>
-      </section>
-
-    </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -206,7 +82,39 @@
     </ul>
   </footer>
 
-<script src="/popup.js"></script>
-<script src="/gallery-lightbox.js"></script>
+<script>
+(function () {
+  const form = document.getElementById('home-signup');
+  if (!form) return;
+  const email = document.getElementById('home-email');
+  const msg = document.getElementById('home-signup-msg');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const value = email.value.trim();
+    if (!value) return;
+    const btn = form.querySelector('button');
+    btn.textContent = '...';
+    btn.disabled = true;
+    const signupEndpoint = 'https://alexanderson' + 'pod' + 'cast.substack.com/api/v1/free';
+    fetch(signupEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: value, first_url: window.location.href, referral_code: null })
+    })
+    .then(function (r) {
+      if (!r.ok && r.status !== 200) throw new Error('subscribe failed');
+      msg.textContent = 'You’re in. Check your inbox to confirm.';
+      msg.className = 'home-signup-msg success';
+      btn.textContent = 'Subscribed';
+    })
+    .catch(function () {
+      msg.textContent = 'Something went wrong. Try the Mailing List page.';
+      msg.className = 'home-signup-msg error';
+      btn.textContent = 'Subscribe';
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
 </body>
 </html>
