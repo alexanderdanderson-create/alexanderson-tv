@@ -285,15 +285,20 @@ nav {
 
 .home-work-thumb {
   width: 100%;
-  aspect-ratio: 2 / 3;
-  object-fit: contain;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   margin: -8px 0 24px;
   background: #f1f1f1;
 }
 
+.home-work-card[href="/timing-movie/"] .home-work-thumb {
+  object-position: center bottom;
+}
+
 .home-work-card[href="/acting-clips/"] .home-work-thumb {
-  aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: center center;
 }
 
 .home-work-card:hover {
@@ -1324,18 +1329,17 @@ nav {
     font-size: 14px;
   }
 
-  .dropdown-menu {
+  .nav-links .dropdown-menu {
     position: static;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    box-shadow: none;
-    border: none;
-    padding: 8px 0 0 16px;
     display: flex;
+    padding: 8px 0 0 16px;
     flex-direction: column;
     gap: 8px;
     background: transparent;
+  }
+
+  .nav-links .dropdown:hover .dropdown-menu {
+    display: flex;
   }
 
   .about-page {
@@ -1369,7 +1373,8 @@ nav {
     padding: 16px;
   }
 
-  .home-work-grid {
+  .home-work-grid,
+  .home-work-three .home-work-grid {
     grid-template-columns: 1fr;
   }
 
