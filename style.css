@@ -933,6 +933,17 @@ nav {
   margin-top: 56px;
 }
 
+.clips-section-heading {
+  margin-top: 24px;
+}
+
+.clips-section-heading h2 {
+  margin-top: 10px;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
 .clip-card {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(260px, 0.75fr);
