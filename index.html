@@ -35,8 +35,18 @@
         <p class="section-label">Alex Anderson</p>
         <h1>Filmmaker<br>Actor</h1>
         <p class="home-hero-intro">Writer-director of <em>Timing</em> and <em>FOG</em>, actor, based in New York City.</p>
-        <form class="home-signup" id="home-signup" aria-label="Subscribe to Alex Anderson's mailing list">
+        <form class="home-signup" id="home-signup" action="https://newsletter.alexanderson.tv/api/v1/free?nojs=true" method="post" aria-label="Subscribe to Alex Anderson's mailing list">
           <label for="home-email">Get updates on new films, screenings, and clips.</label>
+          <input type="hidden" name="first_url" value="https://alexanderson.tv/">
+          <input type="hidden" name="first_referrer" value="">
+          <input type="hidden" name="current_url" value="https://alexanderson.tv/">
+          <input type="hidden" name="current_referrer" value="">
+          <input type="hidden" name="first_session_url" value="https://alexanderson.tv/">
+          <input type="hidden" name="first_session_referrer" value="">
+          <input type="hidden" name="referral_code" value="">
+          <input type="hidden" name="source" value="homepage">
+          <input type="hidden" name="referring_pub_id" value="">
+          <input type="hidden" name="additional_referring_pub_ids" value="">
           <div class="home-signup-row">
             <input id="home-email" type="email" name="email" placeholder="Your email address" required autocomplete="email">
             <button type="submit">Subscribe</button>
@@ -91,34 +101,10 @@
 (function () {
   const form = document.getElementById('home-signup');
   if (!form) return;
-  const email = document.getElementById('home-email');
-  const msg = document.getElementById('home-signup-msg');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const value = email.value.trim();
-    if (!value) return;
-    const btn = form.querySelector('button');
-    btn.textContent = '...';
-    btn.disabled = true;
-    const signupEndpoint = 'https://alexanderson' + 'pod' + 'cast.substack.com/api/v1/free';
-    fetch(signupEndpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: value, first_url: window.location.href, referral_code: null })
-    })
-    .then(function (r) {
-      if (!r.ok && r.status !== 200) throw new Error('subscribe failed');
-      msg.textContent = 'You’re in. Check your inbox to confirm.';
-      msg.className = 'home-signup-msg success';
-      btn.textContent = 'Subscribed';
-    })
-    .catch(function () {
-      msg.textContent = 'Something went wrong. Try the Mailing List page.';
-      msg.className = 'home-signup-msg error';
-      btn.textContent = 'Subscribe';
-      btn.disabled = false;
-    });
-  });
+  const currentUrl = form.querySelector('input[name="current_url"]');
+  if (currentUrl) currentUrl.value = window.location.href;
+  const currentReferrer = form.querySelector('input[name="current_referrer"]');
+  if (currentReferrer) currentReferrer.value = document.referrer || '';
 })();
 </script>
 </body>
