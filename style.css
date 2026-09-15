@@ -958,11 +958,16 @@ nav {
   border-bottom: 0;
 }
 
-.clip-card video {
+.clip-card video,
+.clip-card iframe {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   background: #111;
+}
+
+.clip-card iframe {
+  border: 0;
 }
 
 .clip-copy {
