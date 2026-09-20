@@ -63,45 +63,8 @@
       line-height: 1.6;
       margin-bottom: 28px;
     }
-    #aa-form {
-      display: flex;
-      gap: 0;
-      border: 1px solid #e8e8e8;
-    }
-    #aa-email {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding: 14px 16px;
-      font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      color: #111;
-      background: #fff;
-    }
-    #aa-email::placeholder { color: #aaa; }
-    #aa-submit {
-      background: #111;
-      color: #fff;
-      border: none;
-      padding: 14px 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.2s;
-    }
-    #aa-submit:hover { background: #333; }
-    #aa-msg {
-      margin-top: 14px;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      color: #888;
-      min-height: 18px;
-    }
-    #aa-msg.success { color: #111; }
-    #aa-msg.error { color: #c00; }
+    #aa-kit-form { min-height: 78px; }
+    #aa-kit-form .formkit-form { margin: 0 !important; }
     #aa-legal {
       margin-top: 16px;
       font-family: 'Inter', sans-serif;
@@ -111,8 +74,6 @@
     }
     @media (max-width: 480px) {
       #aa-popup { padding: 40px 24px 32px; }
-      #aa-form { flex-direction: column; }
-      #aa-submit { padding: 14px; }
     }
   `;
   document.head.appendChild(style);
@@ -125,17 +86,17 @@
       <p id="aa-eyebrow">Newsletter</p>
       <h2 id="aa-heading">Stay in the loop</h2>
       <p id="aa-sub">Updates on new films, behind-the-scenes, and more from Alex Anderson.</p>
-      <form id="aa-form">
-        <input id="aa-email" type="email" placeholder="Your email address" required autocomplete="email">
-        <button id="aa-submit" type="submit">Subscribe</button>
-      </form>
-      <p id="aa-msg"></p>
+      <div id="aa-kit-form" aria-label="Subscribe to Alex Anderson's mailing list"></div>
       <p id="aa-legal">No spam. Unsubscribe anytime.</p>
     </div>
   `;
   document.body.appendChild(overlay);
 
-  const msg = overlay.querySelector('#aa-msg');
+  const kitScript = document.createElement('script');
+  kitScript.async = true;
+  kitScript.dataset.uid = '4895fe6aa7';
+  kitScript.src = 'https://witty-maker-683.kit.com/4895fe6aa7/index.js';
+  overlay.querySelector('#aa-kit-form').appendChild(kitScript);
 
   function dismiss() {
     overlay.classList.remove('visible');
@@ -146,37 +107,6 @@
   overlay.querySelector('#aa-close').addEventListener('click', dismiss);
   overlay.addEventListener('click', function(e) {
     if (e.target === overlay) dismiss();
-  });
-
-  overlay.querySelector('#aa-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const email = overlay.querySelector('#aa-email').value.trim();
-    if (!email) return;
-    const btn = overlay.querySelector('#aa-submit');
-    btn.textContent = '...';
-    btn.disabled = true;
-
-    fetch('https://alexandersonpodcast.substack.com/api/v1/free', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, first_url: window.location.href, referral_code: null })
-    })
-    .then(function(r) {
-      if (r.ok || r.status === 200) {
-        msg.textContent = 'You\'re in! Check your inbox to confirm.';
-        msg.className = 'success';
-        localStorage.setItem('aa_popup_dismissed', '1');
-        setTimeout(dismiss, 3000);
-      } else {
-        throw new Error('error');
-      }
-    })
-    .catch(function() {
-      msg.textContent = 'Something went wrong. Try subscribing at newsletter.alexanderson.tv';
-      msg.className = 'error';
-      btn.textContent = 'Subscribe';
-      btn.disabled = false;
-    });
   });
 
   setTimeout(function() { overlay.classList.add('visible'); }, 4000);
