@@ -1094,6 +1094,110 @@ nav {
   background: var(--white);
 }
 
+/* ── FOG EMAIL LIST ── */
+
+.fog-signup {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1.2fr);
+  gap: clamp(36px, 7vw, 96px);
+  align-items: center;
+  margin: 24px 0 96px;
+  padding: clamp(32px, 5vw, 64px);
+  border: 1px solid var(--light-gray);
+  background: linear-gradient(135deg, #f7f7f5 0%, var(--white) 62%);
+}
+
+.fog-signup h2 {
+  margin: 10px 0 18px;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.fog-signup-copy > p:not(.section-label) {
+  max-width: 480px;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.fog-signup .fog-signup-note {
+  margin-top: 18px;
+  color: var(--gray);
+  font-size: 12px;
+}
+
+.fog-signup-note a {
+  color: var(--black);
+  border-bottom: 1px solid currentColor;
+}
+
+.fog-signup-embed {
+  min-width: 0;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+}
+
+.fog-kit-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--black);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.fog-kit-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.fog-kit-fields input {
+  min-width: 0;
+  padding: 15px 16px;
+  border: 1px solid #d3d3d0;
+  border-right: 0;
+  border-radius: 0;
+  background: #fafaf8;
+  color: var(--black);
+  font: inherit;
+  font-size: 15px;
+}
+
+.fog-kit-fields button {
+  padding: 15px 22px;
+  border: 1px solid var(--black);
+  border-radius: 0;
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.fog-kit-fields button:hover,
+.fog-kit-fields button:focus-visible {
+  background: var(--white);
+  color: var(--black);
+}
+
+.fog-kit-fields input:focus-visible,
+.fog-kit-fields button:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 2px;
+}
+
+.fog-kit-form > p {
+  margin-top: 12px;
+  color: var(--gray);
+  font-size: 11px;
+}
+
 /* ── 404 ── */
 
 .not-found {
@@ -1142,6 +1246,21 @@ nav {
 
   .container {
     padding: 0 20px;
+  }
+
+  .fog-signup {
+    grid-template-columns: 1fr;
+    margin-bottom: 72px;
+    padding: 32px 20px 20px;
+  }
+
+  .fog-kit-fields {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .fog-kit-fields input {
+    border-right: 1px solid #d3d3d0;
   }
 
   .film-grid {
