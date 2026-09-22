@@ -94,8 +94,8 @@
 
   const kitScript = document.createElement('script');
   kitScript.async = true;
-  kitScript.dataset.uid = '4895fe6aa7';
-  kitScript.src = 'https://witty-maker-683.kit.com/4895fe6aa7/index.js';
+  kitScript.dataset.uid = 'f1f1ca217f';
+  kitScript.src = 'https://witty-maker-683.kit.com/f1f1ca217f/index.js';
   overlay.querySelector('#aa-kit-form').appendChild(kitScript);
 
   function dismiss() {

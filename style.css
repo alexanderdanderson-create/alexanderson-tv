@@ -175,7 +175,8 @@ nav {
   max-width: 620px;
 }
 
-.home-signup label {
+.home-signup label,
+.home-signup-label {
   display: block;
   margin-bottom: 14px;
   font-size: 14px;
