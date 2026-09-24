@@ -4,6 +4,11 @@
   status = 301
 
 [[redirects]]
+  from = "/watchfog"
+  to = "/watchfog/"
+  status = 301
+
+[[redirects]]
   from = "/new-folder"
   to = "/"
   status = 301

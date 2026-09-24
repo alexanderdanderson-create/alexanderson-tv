@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FOG — Watch the Film Free</title>
+  <meta name="description" content="FOG, a psychological drama about a daughter going home to the parents she's trying to escape. Watch the trailer, then the full film free.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="FOG — Watch the Film Free">
+  <meta property="og:description" content="A daughter goes home to the parents she's trying to escape. Watch the trailer, then the full film free.">
+  <meta property="og:image" content="https://alexanderson.tv/assets/fog-stills/amanda-van-nostrand-as-jane-fog-feature-film-still-breakdown.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --panel: #171717;
+      --text: #f2f2f2;
+      --muted: #9a9a9a;
+      --line: #2a2a2a;
+      --accent: #ffffff;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); font-weight: 300; line-height: 1.6; }
+    img { display: block; width: 100%; height: auto; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+    /* Hero */
+    .hero { padding: 48px 0 28px; text-align: center; }
+    .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    h1 { font-size: clamp(64px, 16vw, 132px); font-weight: 600; letter-spacing: .12em; line-height: 1; margin: 14px 0 12px; padding-left: .12em; }
+    .logline { font-size: clamp(18px, 4.4vw, 22px); font-weight: 300; max-width: 620px; margin: 0 auto; }
+    .meta { margin-top: 12px; font-size: 13px; color: var(--muted); letter-spacing: .04em; }
+
+    /* Trailer */
+    .trailer { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--line); }
+    .trailer iframe, .trailer #trailer-player { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .trailer-label { text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+    /* CTA */
+    .cta-block { text-align: center; padding: 32px 0 8px; }
+    .cta {
+      display: inline-block; background: var(--accent); color: #000; font-weight: 600; font-size: 18px;
+      padding: 18px 34px; border-radius: 999px; text-decoration: none; transition: transform .15s ease, opacity .15s ease;
+    }
+    .cta:hover { transform: translateY(-1px); opacity: .92; }
+    .cta-sub { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+    /* Quotes */
+    .quotes { padding: 48px 0 16px; display: grid; gap: 14px; }
+    .quote { background: var(--panel); border: 1px solid var(--line); padding: 22px 24px; }
+    .quote p { font-size: 17px; line-height: 1.55; }
+    .quote span { display: block; margin-top: 10px; font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
+
+    /* Story */
+    .story { padding: 40px 0 8px; display: grid; gap: 24px; align-items: center; }
+    .story p { font-size: 17px; color: #d6d6d6; }
+    .story p + p { margin-top: 12px; }
+    .credits { font-size: 14px; color: var(--muted); }
+
+    footer { padding: 48px 0 40px; text-align: center; font-size: 12px; color: #666; }
+
+    @media (min-width: 760px) {
+      .hero { padding: 72px 0 36px; }
+      .quotes { grid-template-columns: 1fr 1fr; }
+      .story { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1704968348299158');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1704968348299158&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+  <main class="wrap">
+
+    <header class="hero">
+      <p class="eyebrow">A feature film by Alex Anderson</p>
+      <h1>FOG</h1>
+      <p class="logline">A young writer goes back to her childhood home, and back into the fear, obligation, and guilt she thought she'd left behind.</p>
+      <p class="meta">Psychological drama &nbsp;·&nbsp; 71 minutes &nbsp;·&nbsp; Free to watch</p>
+    </header>
+
+    <section aria-label="FOG trailer">
+      <div class="trailer">
+        <div id="trailer-player"></div>
+      </div>
+      <p class="trailer-label">Official trailer</p>
+    </section>
+
+    <section class="cta-block">
+      <a class="cta js-watch" data-location="top" href="https://www.youtube.com/watch?v=aAknjJiYZJA" target="_blank" rel="noopener">Watch the full film free</a>
+      <p class="cta-sub">The complete film, free on YouTube. No sign-up.</p>
+    </section>
+
+    <section class="quotes" aria-label="What viewers are saying">
+      <div class="quote">
+        <p>“This is the best film I’ve ever seen on what it’s really like being an adult child of parents who abused us. Thank you for what feels like ‘being seen.’”</p>
+        <span>Viewer</span>
+      </div>
+      <div class="quote">
+        <p>“You portrayed how hard it was to go back to that childhood house. So many undercurrents. I don’t feel alone after watching it.”</p>
+        <span>Viewer</span>
+      </div>
+      <div class="quote">
+        <p>“This one makes you laugh and cry and leaves you thinking about it for days.”</p>
+        <span>Viewer</span>
+      </div>
+      <div class="quote">
+        <p>“The pain and guilt of going no contact. Bravo on the writing and acting.”</p>
+        <span>Viewer</span>
+      </div>
+    </section>
+
+    <section class="story">
+      <img src="/assets/fog-stills/kathleen-mcnenny-as-rose-amanda-van-nostrand-as-jane-fog-feature-film-still-table-conversation.jpg" alt="Kathleen McNenny as Rose and Amanda Van Nostrand as Jane in FOG" loading="lazy">
+      <div>
+        <p>Jane, a young writer, returns to her childhood home with a final family obligation and a deadline. Every small exchange threatens to pull her back into the fear, obligation, and guilt she's been trying to leave behind.</p>
+        <p class="credits">Starring Amanda Van Nostrand, Ellen Adair, Kathleen McNenny, and Brian McCarthy. Written and directed by Alex Anderson.</p>
+      </div>
+    </section>
+
+    <section class="cta-block">
+      <a class="cta js-watch" data-location="bottom" href="https://www.youtube.com/watch?v=aAknjJiYZJA" target="_blank" rel="noopener">Watch FOG free on YouTube</a>
+    </section>
+
+  </main>
+
+  <footer>© Blatherskite Films</footer>
+
+  <script>
+    // --- Pixel event: full-film click ---
+    document.querySelectorAll('.js-watch').forEach(function (a) {
+      a.addEventListener('click', function () {
+        if (window.fbq) fbq('trackCustom', 'WatchFullFilm', { location: a.dataset.location });
+      });
+    });
+
+    // --- Trailer embed + pixel events: play, 50%, complete ---
+    var TRAILER_ID = 'DacCvo7ngLA';
+    var fired = {};
+    function fire(name) {
+      if (fired[name]) return;
+      fired[name] = true;
+      if (window.fbq) fbq('trackCustom', name);
+    }
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+
+    var player, timer;
+    window.onYouTubeIframeAPIReady = function () {
+      player = new YT.Player('trailer-player', {
+        host: 'https://www.youtube-nocookie.com',
+        videoId: TRAILER_ID,
+        playerVars: { rel: 0, modestbranding: 1, playsinline: 1 },
+        events: {
+          onStateChange: function (e) {
+            if (e.data === YT.PlayerState.PLAYING) {
+              fire('TrailerPlay');
+              clearInterval(timer);
+              timer = setInterval(function () {
+                var d = player.getDuration(), t = player.getCurrentTime();
+                if (d && t / d >= 0.5) fire('Trailer50');
+              }, 1000);
+            } else {
+              clearInterval(timer);
+            }
+            if (e.data === YT.PlayerState.ENDED) fire('TrailerComplete');
+          }
+        }
+      });
+    };
+  </script>
+</body>
+</html>
