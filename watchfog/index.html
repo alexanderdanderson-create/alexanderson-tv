@@ -149,7 +149,11 @@ src="https://www.facebook.com/tr?id=1704968348299158&ev=PageView&noscript=1"
     // --- Pixel event: full-film click ---
     document.querySelectorAll('.js-watch').forEach(function (a) {
       a.addEventListener('click', function () {
-        if (window.fbq) fbq('trackCustom', 'WatchFullFilm', { location: a.dataset.location });
+        if (window.fbq) {
+          fbq('trackCustom', 'WatchFullFilm', { location: a.dataset.location });
+          // Standard event so Ads Manager can report full-film clicks per ad
+          fbq('track', 'ViewContent', { content_name: 'FOG full film', content_type: 'film', location: a.dataset.location });
+        }
       });
     });
 
