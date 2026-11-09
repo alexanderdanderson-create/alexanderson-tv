@@ -27,29 +27,43 @@
     img { display: block; width: 100%; height: auto; }
     .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
 
-    /* Hero */
-    .hero { padding: 48px 0 28px; text-align: center; }
-    .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
-    h1 { font-size: clamp(64px, 16vw, 132px); font-weight: 600; letter-spacing: .12em; line-height: 1; margin: 14px 0 12px; padding-left: .12em; }
-    .logline { font-size: clamp(18px, 4.4vw, 22px); font-weight: 300; max-width: 620px; margin: 0 auto; }
-    .meta { margin-top: 12px; font-size: 13px; color: var(--muted); letter-spacing: .04em; }
+    /* Hero (kept tiny so the trailer + button are on the first screen) */
+    .hero { padding: 22px 0 14px; text-align: center; }
+    h1 { font-size: clamp(52px, 15vw, 96px); font-weight: 600; letter-spacing: .12em; line-height: 1; margin: 0 0 8px; padding-left: .12em; }
+    .hook { font-size: clamp(17px, 4.4vw, 21px); font-weight: 300; max-width: 560px; margin: 0 auto; line-height: 1.4; }
+    .meta { margin-top: 8px; font-size: 13px; color: var(--muted); letter-spacing: .04em; }
+    .eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 
-    /* Trailer */
-    .trailer { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--line); }
+    /* Trailer: static poster first, YouTube player only after tap */
+    .trailer { position: relative; aspect-ratio: 16 / 9; background: #000; border: 1px solid var(--line); overflow: hidden; }
     .trailer iframe, .trailer #trailer-player { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .poster-btn { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #000; }
+    .poster-btn img { width: 100%; height: 100%; object-fit: cover; opacity: .82; }
+    .play-icon { position: absolute; top: 50%; left: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: rgba(255,255,255,.94); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(0,0,0,.5); }
+    .play-icon::after { content: ""; margin-left: 6px; border-style: solid; border-width: 13px 0 13px 22px; border-color: transparent transparent transparent #000; }
+    .poster-label { position: absolute; left: 0; right: 0; bottom: 10px; text-align: center; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.8); }
     .trailer-label { text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px; }
 
+    /* End-of-trailer overlay */
+    .end-overlay { position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: rgba(0,0,0,.86); text-align: center; padding: 16px; z-index: 3; }
+    .end-overlay.show { display: flex; }
+    .end-overlay h2 { font-size: clamp(20px, 5.5vw, 28px); font-weight: 600; }
+    .end-close { position: absolute; top: 8px; right: 8px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #555; background: rgba(0,0,0,.6); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; }
+
     /* CTA */
-    .cta-block { text-align: center; padding: 32px 0 8px; }
+    .cta-block { text-align: center; padding: 18px 0 6px; }
     .cta {
       display: inline-block; background: var(--accent); color: #000; font-weight: 600; font-size: 18px;
       padding: 18px 34px; border-radius: 999px; text-decoration: none; transition: transform .15s ease, opacity .15s ease;
     }
     .cta:hover { transform: translateY(-1px); opacity: .92; }
-    .cta-sub { margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .cta-sub { margin-top: 10px; font-size: 13px; color: var(--muted); }
+
+    /* Sticky mobile bar */
+    .sticky-bar { display: none; }
 
     /* Quotes */
-    .quotes { padding: 48px 0 16px; display: grid; gap: 14px; }
+    .quotes { padding: 40px 0 16px; display: grid; gap: 14px; }
     .quote { background: var(--panel); border: 1px solid var(--line); padding: 22px 24px; }
     .quote p { font-size: 17px; line-height: 1.55; }
     .quote span { display: block; margin-top: 10px; font-size: 12px; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; }
@@ -62,8 +76,17 @@
 
     footer { padding: 48px 0 40px; text-align: center; font-size: 12px; color: #666; }
 
+    @media (max-width: 759px) {
+      body { padding-bottom: 84px; }
+      .sticky-bar {
+        display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: rgba(13,13,13,.96);
+        border-top: 1px solid var(--line); text-align: center;
+      }
+      .sticky-bar .cta { display: block; padding: 15px 20px; font-size: 17px; }
+    }
     @media (min-width: 760px) {
-      .hero { padding: 72px 0 36px; }
+      .hero { padding: 48px 0 24px; }
       .quotes { grid-template-columns: 1fr 1fr; }
       .story { grid-template-columns: 1fr 1fr; }
     }
@@ -92,15 +115,24 @@ src="https://www.facebook.com/tr?id=1704968348299158&ev=PageView&noscript=1"
   <main class="wrap">
 
     <header class="hero">
-      <p class="eyebrow">A feature film by Alex Anderson</p>
       <h1>FOG</h1>
-      <p class="logline">A young writer goes back to her childhood home, and back into the fear, obligation, and guilt she thought she'd left behind.</p>
-      <p class="meta">Psychological drama &nbsp;·&nbsp; 71 minutes &nbsp;·&nbsp; Free to watch</p>
+      <p class="hook">A daughter goes home to the parents she&rsquo;s trying to escape.</p>
+      <p class="meta">71 minutes &nbsp;&middot;&nbsp; Free &nbsp;&middot;&nbsp; No sign-up</p>
     </header>
 
     <section aria-label="FOG trailer">
-      <div class="trailer">
+      <div class="trailer" id="trailer-box">
         <div id="trailer-player"></div>
+        <button class="poster-btn" id="trailer-poster" type="button" aria-label="Play the FOG trailer">
+          <img src="/assets/fog-stills/amanda-van-nostrand-as-jane-fog-feature-film-still-breakdown.jpg" alt="Amanda Van Nostrand as Jane in FOG" width="640" height="360" fetchpriority="high" decoding="async">
+          <span class="play-icon" aria-hidden="true"></span>
+          <span class="poster-label">Watch the trailer</span>
+        </button>
+        <div class="end-overlay" id="end-overlay" role="dialog" aria-label="Watch the full film">
+          <button class="end-close" id="end-close" type="button" aria-label="Close">&times;</button>
+          <h2>Ready for the full film?</h2>
+          <a class="cta js-watch" data-location="trailer-end" href="https://www.youtube.com/watch?v=aAknjJiYZJA" target="_blank" rel="noopener">Watch the full film free</a>
+        </div>
       </div>
       <p class="trailer-label">Official trailer</p>
     </section>
@@ -132,6 +164,8 @@ src="https://www.facebook.com/tr?id=1704968348299158&ev=PageView&noscript=1"
     <section class="story">
       <img src="/assets/fog-stills/kathleen-mcnenny-as-rose-amanda-van-nostrand-as-jane-fog-feature-film-still-table-conversation.jpg" alt="Kathleen McNenny as Rose and Amanda Van Nostrand as Jane in FOG" loading="lazy">
       <div>
+        <p class="eyebrow">A feature film by Alex Anderson</p>
+        <p>A young writer goes back to her childhood home, and back into the fear, obligation, and guilt she thought she&rsquo;d left behind.</p>
         <p>Jane, a young writer, returns to her childhood home with a final family obligation and a deadline. Every small exchange threatens to pull her back into the fear, obligation, and guilt she's been trying to leave behind.</p>
         <p class="credits">Starring Amanda Van Nostrand, Ellen Adair, Kathleen McNenny, and Brian McCarthy. Written and directed by Alex Anderson.</p>
       </div>
@@ -142,6 +176,10 @@ src="https://www.facebook.com/tr?id=1704968348299158&ev=PageView&noscript=1"
     </section>
 
   </main>
+
+  <div class="sticky-bar" id="sticky-bar">
+    <a class="cta js-watch" data-location="sticky" href="https://www.youtube.com/watch?v=aAknjJiYZJA" target="_blank" rel="noopener">Watch the full film free</a>
+  </div>
 
   <footer>© Blatherskite Films</footer>
 
@@ -157,7 +195,7 @@ src="https://www.facebook.com/tr?id=1704968348299158&ev=PageView&noscript=1"
       });
     });
 
-    // --- Trailer embed + pixel events: play, 50%, complete ---
+    // --- Trailer: static poster until tapped; YouTube player loads only on tap ---
     var TRAILER_ID = 'DacCvo7ngLA';
     var fired = {};
     function fire(name) {
@@ -165,19 +203,21 @@ src="https://www.facebook.com/tr?id=1704968348299158&ev=PageView&noscript=1"
       fired[name] = true;
       if (window.fbq) fbq('trackCustom', name);
     }
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    document.head.appendChild(tag);
 
-    var player, timer;
-    window.onYouTubeIframeAPIReady = function () {
+    var posterBtn = document.getElementById('trailer-poster');
+    var endOverlay = document.getElementById('end-overlay');
+    var player, timer, apiRequested = false;
+
+    function createPlayer() {
       player = new YT.Player('trailer-player', {
         host: 'https://www.youtube-nocookie.com',
         videoId: TRAILER_ID,
-        playerVars: { rel: 0, modestbranding: 1, playsinline: 1 },
+        playerVars: { rel: 0, modestbranding: 1, playsinline: 1, autoplay: 1 },
         events: {
+          onReady: function (e) { try { e.target.playVideo(); } catch (err) {} },
           onStateChange: function (e) {
             if (e.data === YT.PlayerState.PLAYING) {
+              endOverlay.classList.remove('show');
               fire('TrailerPlay');
               clearInterval(timer);
               timer = setInterval(function () {
@@ -187,11 +227,29 @@ src="https://www.facebook.com/tr?id=1704968348299158&ev=PageView&noscript=1"
             } else {
               clearInterval(timer);
             }
-            if (e.data === YT.PlayerState.ENDED) fire('TrailerComplete');
+            if (e.data === YT.PlayerState.ENDED) {
+              fire('TrailerComplete');
+              endOverlay.classList.add('show');
+            }
           }
         }
       });
-    };
+    }
+
+    posterBtn.addEventListener('click', function () {
+      posterBtn.style.display = 'none';
+      if (window.YT && YT.Player) { createPlayer(); return; }
+      if (apiRequested) return;
+      apiRequested = true;
+      window.onYouTubeIframeAPIReady = createPlayer;
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+    });
+
+    document.getElementById('end-close').addEventListener('click', function () {
+      endOverlay.classList.remove('show');
+    });
   </script>
 </body>
 </html>
